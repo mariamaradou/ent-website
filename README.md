@@ -1,5 +1,8 @@
 # ent-website
 
+-------------------
+A medical website advertising by dad's work as an otorinolarigologist (Ear - Nose - Throat doctor).
+------------------
 ## Project setup
 ```
 npm install
