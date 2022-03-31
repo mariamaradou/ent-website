@@ -1,7 +1,7 @@
 # ent-website
 
 -------------------
-A medical website advertising by dad's work as an otorinolarigologist (Ear - Nose - Throat doctor).
+A medical website advertising by dad's work as an otorinolarigologist (Ear - Nose - Throat doctor). It was a chance for me to learn Vue.js and do something nice for him :)
 ------------------
 ## Project setup
 ```
