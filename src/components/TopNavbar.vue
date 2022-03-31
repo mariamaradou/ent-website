@@ -1,8 +1,8 @@
 <template>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    
-    <router-link class="navbar-brand" to="/" style="color:black; font-weight:bold;">Ιατρείο Ιωάννης Μαράντος</router-link>
+    <img id="logo_image" v-bind:src="require('../../public/icon.png')" >
+    <router-link class="navbar-brand" to="/" style="color:rgb(85 82 82); font-weight:bold;">ΙΩΑΝΝΗΣ ΜΑΡΑΝΤΟΣ</router-link>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -26,7 +26,21 @@
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
-      
+        <li class="nav-item dropdown">
+          <a class="dropdown-toggle"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Υπηρεσίες
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Ωτολογία</a></li>
+            <li><a class="dropdown-item" href="#">Ρινολογία</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Χειρουργική</a></li>
+          </ul>
+        </li>
+      <li class="nav-item">
+          
+        <router-link to="/bio"  >Βιογραφικό</router-link>
+        </li>
       </ul>
       <!-- <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -35,7 +49,14 @@
     </div>
   </div>
 </nav>
-<router-view/>
+<!--router-view will display the component that corresponds to the url. You can put it anywhere to adapt it to your layout.-->
+  <router-view v-slot="{ Component }">
+  <transition name="fade" mode="out-in">
+    
+    <component :is="Component" />
+  </transition>
+</router-view> 
+<!-- <router-view/> -->
 </template>
 <script>
 export default {
@@ -70,6 +91,35 @@ a{color:rgba(0, 0, 0, 0.55);
 
 .ms-auto{
   padding-right: 100px;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+#logo_image{
+  width: 5em;
+}
+
+@media only screen and (max-width: 400px){
+  .navbar > .container, .navbar > .container-fluid, .navbar > .container-sm, .navbar > .container-md, .navbar > .container-lg, .navbar > .container-xl, .navbar > .container-xxl {
+    justify-content: center;
+
+  }
+}
+
+@media only screen and (min-width: 412px) and (max-width: 474px){
+  .navbar > .container, .navbar > .container-fluid, .navbar > .container-sm, .navbar > .container-md, .navbar > .container-lg, .navbar > .container-xl, .navbar > .container-xxl {
+    justify-content: center;
+
+  }
 }
 
 </style>

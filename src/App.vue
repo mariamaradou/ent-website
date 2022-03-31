@@ -13,7 +13,7 @@ import FooterMenu from './components/FooterMenu.vue'
 
 export default {
   name: 'App',
-  
+ 
   components: {
     TopNavbar,
    
@@ -23,12 +23,41 @@ export default {
 </script>
 
 <style>
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   
-  color: darkcyan;
+  
+  /* color: darkcyan; */
 
 }
+
+.btn-close:focus,.btn-close:active {
+   outline: none ;
+   box-shadow: none;
+   opacity:0.3;
+  
+}
+
+.navbar-toggler:active, .navbar-toggler:focus{
+  outline: none ;
+   box-shadow: none;
+
+}
+
+.btn-close:hover{
+   opacity:0.75;
+}
+
+
+
+h3{
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+
 </style>

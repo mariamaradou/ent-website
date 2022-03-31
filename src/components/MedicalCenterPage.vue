@@ -1,5 +1,20 @@
-<template >
-
+<template  >
+<div id="medicalCenter">
+  <div id="equipment">
+    <h3>Το Ιατρείο</h3>
+    <p> Ο χώρος του ιατρείου είναι σχεδιασμένος ώστε να εκπέμπει ηρεμία και οικειότητα στον επισκέπτη.
+      Είναι εξοπλισμένος με τα κατάλληλα εργαλεία για τον σωστή εξέταση του ασθενούς. 
+    Με τον ΩΡΛ εξοπλισμό πραγματοποιούνται οι ακόλουθες εξετάσεις:
+    </p>
+    <ul >
+      <li>Ενδοσκόπηση ώτων, ρινός, ρινοφάρυγγα, φάρυγγα και λάρυγγα</li>
+      <li> Τυμπανομετρία </li>
+      <li> Έλεγχο ρινορραγίας </li>
+      <li> Video καταγραφή ενδοσκοπικών δεδομένων </li>
+      
+    </ul>
+  </div>
+<hr>
  <div id="imagesofMedicalCenter" class="d-flex justify-content-center"  >
  <img id="0" v-bind:src="require('../../public/images/six.jpg')" role="button" @click="openModal"/>
  <img id="1" v-bind:src="require('../../public/images/two.jpg')" role="button" @click="openModal" />
@@ -17,14 +32,15 @@
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" id="3" aria-label="Slide 4"></button>
   </div>
   <div class="carousel-inner">
-    <div class="carousel-item">
+    
+    <div class="carousel-item" id="carousel1">
        <button class="closeButton btn-close"  @click="closeModal">
      
      </button>
       <img v-bind:src="require('../../public/images/six.jpg')"  >
       
     </div>
-    <div class="carousel-item">
+    <div class="carousel-item" id="carousel2" >
       <button class="closeButton btn-close"  @click="closeModal">
      
      </button>
@@ -32,14 +48,15 @@
     
       
     </div>
-    <div class="carousel-item">
+    <div class="carousel-item" id="carousel3">
       <button class="closeButton btn-close"  @click="closeModal">
-     
+    <!-- <img  src="../../public/images/closeButton.png"> -->
      </button>
+     
       <img v-bind:src="require('../../public/images/three.jpg')" >
        
     </div>
-    <div class="carousel-item">
+    <div class="carousel-item" id="carousel4">
       <button class="closeButton btn-close"  @click="closeModal">
      
      </button>
@@ -57,6 +74,8 @@
     
   </button>
 </div>
+
+</div>
  
 </template>
 
@@ -67,6 +86,7 @@ export default {
     msg: String
   },
   methods: {
+   
   openModal($event) {
     // `this` inside methods points to the current active instance
     
@@ -83,11 +103,13 @@ export default {
       document.querySelectorAll('.carousel-item')[$event.target.id].classList.add('active'); //class="active"
     document.getElementById("carouselExampleIndicators").style.display="flex";
     document.getElementById("imagesofMedicalCenter").classList.add("d-none");
+     document.getElementById("equipment").classList.add("d-none");
   },
   closeModal() {
     var childDivs = document.getElementsByClassName('carousel-indicators')[0].getElementsByTagName('button');
     document.getElementById("carouselExampleIndicators").style.display="none";
     document.getElementById("imagesofMedicalCenter").classList.remove("d-none");
+     document.getElementById("equipment").classList.remove("d-none");
       document.querySelectorAll('.carousel-item').forEach(e=> e.classList.remove('active'));
      for(let i=0; i< childDivs.length; i++ )
     {
@@ -121,6 +143,11 @@ export default {
   
 }
 
+#imagesofMedicalCenter > img:hover{
+  transition: opacity 0.5s;
+  opacity: 0.8;
+}
+
 #carouselExampleIndicators{
  /* background-color: rgba(58, 57, 57, 0.9);*/
   background: rgba(58, 57, 57, 0.14);
@@ -133,17 +160,31 @@ backdrop-filter: blur(5px);
 
      display: flex;
     justify-content: center;
-    
+   
     
 }
 
+#carousel1{
+  background-image:url('../../public/images/six - blurred.jpg');
+  
+
+}
+#carousel2{
+  background-image:url('../../public/images/two - blurred.jpg')
+}
+#carousel3{
+  background-image:url('../../public/images/three - blurred.jpg')
+}
+#carousel4{
+  background-image:url('../../public/images/four - blurred.jpg');
+}
 
  
 
 
 
 .carousel-indicators [data-bs-target]{
-  background-color: darkcyan;
+  background-color: rgb(106, 110, 110);
 }
 
 
@@ -170,28 +211,58 @@ width:100vw;
 }
 
 .carousel-control-prev, .carousel-control-next{
-  top:30px;
+  top:30%;
+  height:40%;
   
   
 }
 
 .carousel-control-next-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' fill='darkcyan' viewBox='0 0 16 16'%3E%3Cpath d='m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' fill='black' viewBox='0 0 16 16'%3E%3Cpath d='m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z'/%3E%3C/svg%3E");
 
 }
 
 .carousel-control-prev-icon{
-   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' fill='darkcyan' viewBox='0 0 16 16'%3E%3Cpath d='m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z'/%3E%3C/svg%3E");
+   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' fill='black' viewBox='0 0 16 16'%3E%3Cpath d='m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z'/%3E%3C/svg%3E");
 }
 
 
 .closeButton{
   width: 30px; 
   right:5vw;
-
+  
   top:4px;
-    position: absolute;
-    background-color: darkcyan;
+  position: absolute;
+  background: url("../../public/images/closeButton.png");
+    
+}
+
+.btn-close{
+  height:1.8em;
+  
+}
+
+
+#equipment{
+  padding:10px;
+}
+ul{
+  list-style-type:none;
+  margin:10px;
+  padding-left: 0px;
+}
+li{
+  background-image: url('../../public/images/check_big.png');
+  
+  background-repeat: no-repeat;
+   padding-left: 40px;
+   padding-bottom: 10px;
+}
+
+p{padding-left:10px;}
+
+hr{
+  margin:0;
 }
 
 </style>
