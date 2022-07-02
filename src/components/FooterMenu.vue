@@ -1,12 +1,6 @@
 <template>
  <footer class="text-center text-lg-start bg-light text-muted">
-  <!-- Section: Social media -->
-  <section
-    class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
-  >
-
-  </section>
-  <!-- Section: Social media -->
+ 
 
   <!-- Section: Links  -->
   <section class="">
@@ -61,6 +55,11 @@
     </div>
   </section>
   <!-- Section: Links  -->
+  <hr class="footer-split">
+  <section class="designer-info">
+    <a href="https://www.linkedin.com/in/maria-maradou/" target="_blank">
+    <span>
+    © 2022 Κατασκευή Ιστοσελίδας - <strong>mariamaradou</strong></span></a></section>
 
 </footer>
 </template>
@@ -80,10 +79,34 @@ export default {
 <style scoped>
 a{
   color:#6C757D;
+  text-decoration: none;
+ 
 }
 
 #map {
   padding-bottom:10px;
  
+}
+
+.footer-split{
+  background-color: grey;
+}
+
+.designer-info{
+  
+  text-align: center;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+footer{
+  padding-left: 10%;
+  padding-right: 10%;
+
+}
+
+footer section {
+  padding-top:1px;
 }
 </style>

@@ -1,8 +1,11 @@
 <template>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
+ <div class="contact-info" >Επικοινωνία: +306973398691 / marantosgiannis@gmail.com</div>
+ <hr class="header-split">
   <div class="container-fluid">
-    <img id="logo_image" v-bind:src="require('../../public/icon.png')" >
-    <router-link class="navbar-brand" to="/" style="color:rgb(85 82 82); font-weight:bold;">ΙΩΑΝΝΗΣ ΜΑΡΑΝΤΟΣ</router-link>
+    
+   
+    <router-link class="navbar-brand" to="/" > <img id="logo_image" v-bind:src="require('../../public/images/ent_logo_small.png')" ></router-link> 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -67,6 +70,10 @@ name: 'TopNavbar',
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
+.dropdown-item:focus{
+  background-color:darkcyan;
+}
+
 
 .navbar-nav .nav-link:hover{
   color:darkcyan;
@@ -85,13 +92,8 @@ a{color:rgba(0, 0, 0, 0.55);
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
 
- .container-fluid{                             /*   to menou na einai pio aristera kai na mi pigainei katw se merikes suskeues */
-  padding-right: var(--bs-gutter-x, 0.5rem);
-}
 
-.ms-auto{
-  padding-right: 100px;
-}
+
 
 .fade-enter-active,
 .fade-leave-active {
@@ -105,7 +107,33 @@ a{color:rgba(0, 0, 0, 0.55);
 }
 
 #logo_image{
-  width: 5em;
+  width: 200px;
+}
+
+.navbar{
+  flex-direction: column;
+  padding-right: 10%;
+  padding-left: 10%;
+}
+
+.navbar > *:first-child{
+  align-self: flex-end;
+}
+
+.header-split{
+  width:100%;
+  background-color: grey;
+  margin: 0.5rem;
+  
+}
+
+.contact-info{
+  font-size: 12px;
+  
+}
+
+.container-fluid{
+  padding-top:2px;
 }
 
 @media only screen and (max-width: 400px){
@@ -115,11 +143,22 @@ a{color:rgba(0, 0, 0, 0.55);
   }
 }
 
-@media only screen and (min-width: 412px) and (max-width: 474px){
-  .navbar > .container, .navbar > .container-fluid, .navbar > .container-sm, .navbar > .container-md, .navbar > .container-lg, .navbar > .container-xl, .navbar > .container-xxl {
-    justify-content: center;
 
+
+@media only screen and (max-width:991px){
+  .nav-item{
+    width:100%;
+    border-bottom:1px solid  rgba(51, 50, 50, 0.2);
   }
+
+  .navbar-nav{
+  margin-top:0.5rem;
+
+}
+
+#logo_image{
+  margin-left:1rem;
+}
 }
 
 </style>

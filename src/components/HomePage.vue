@@ -1,13 +1,15 @@
 <template>
-  <div class="mainPage">
-
-   <img id="main-image" v-bind:src="require('../../public/images/ent-main.jpg')"/>
-  <div class="bg-text">
+  <div class="mainPage section-container">
+<div>Καλωσήρθατε. Σας ευχαριστώ που επισκέφθεστε την ιστοσελίδα μου.</div>
+<div id="main-image">
+   <img  v-bind:src="require('../../public/images/dad_surgeon_circle.png')"/>
+   </div>
+  <!-- <div class="bg-text">
   <h1>Ιωάννης Μαράντος</h1>
   <h2>Χειρουργός Ωτορινολαρυγγολόγος</h2>
   <p>Πανεπιστήμιο Αθηνών</p>
   
-</div>
+</div> -->
 
    <button type="button" class="btn-close" id="scrollButton" @click="scrollDown"></button>
    
@@ -32,17 +34,31 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;1,300;1,400&display=swap');
+
+.mainPage{
+ 
+  display: flex;
+  justify-content: space-between;
+ 
+}
 #main-image{
-  width: 98vw;
-  height:35vw;
-  filter: blur(6px);
-  -webkit-filter: blur(6px);
-  
-  
+  /* width: 98vw;
+  height:35vw; */
+  /* filter: blur(6px);
+  -webkit-filter: blur(6px); */
+
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+   /* width:50%;
+  height:50%; */
+}
+
+#main-image >img {
+    
+  width:400px;
+  height:400px;
 }
 
 .bg-text {
@@ -55,10 +71,10 @@ export default {
   border-radius: 10px;
   position: relative;
  /* top: 60%;*/
-  left: 50%;
-  transform: translate(-20%, -50%);
+  left: 65%;
+  transform: translate(-30%, -50%);
   z-index: 2;
-  width: 60vw;
+  width: 40vw;
   animation-name: width-adjust;
   animation-duration: 3s;
   padding: 15px;
@@ -67,13 +83,35 @@ export default {
 }
 
 h1{
-  font-size: 2.5vw;
-}
-h2{
   font-size: 2vw;
 }
+h2{
+  font-size: 1.5vw;
+}
 p{
-  font-size: 1.8vw;
+  font-size: 1.3vw;
+  font-weight:200;
+}
+
+@keyframes width-adjust {
+  from {
+    width: 10vw;
+  }
+  to {
+    width: 40vw;}
+
+    
+}
+
+#scrollButton{
+  position:absolute;
+  left:10px;
+  bottom:5%;
+  background:url("../../public/images/arrowDown.png");
+  width:95px;
+  height:95px;
+  border:0;
+  
 }
 
 @media only screen and (max-width:600px){
@@ -91,7 +129,8 @@ p{
 .bg-text{
   position: relative;
   top: 50%;
-  left: 50%;
+  left: 60%;
+  width:60vw;
   transform: translate(-50%, -50%);
  
   
@@ -104,19 +143,6 @@ p{
   
 }
 
-
-
-
-
-}
-
-@media only screen and (max-width:1140px){
-  #scrollButton{
-  display: none;
-  
-}
-}
-
 @keyframes width-adjust {
   from {
     width: 10vw;
@@ -127,16 +153,24 @@ p{
     
 }
 
-#scrollButton{
-  position:absolute;
-  left:10px;
-  bottom:5%;
-  background:url("../../public/images/arrowDown.png");
-  width:95px;
-  height:95px;
-  border:0;
-  
+
+
+
+
 }
+
+@media only screen and (max-width:1000px){
+
+  #scrollButton{
+    display: none;
+  }
+}
+
+
+
+
+
+
 
 
 

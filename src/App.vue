@@ -28,10 +28,15 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
+  font-size: 0.9rem;
+  outline: none;
   
   /* color: darkcyan; */
 
+}
+
+.section-container{
+   padding: 30px 10% 30px 10%;
 }
 
 .btn-close:focus,.btn-close:active {
@@ -57,6 +62,8 @@ h3{
     padding: 10px;
     width: 100%;
     text-align: center;
+    font-weight:600;
+    color: rgb(65, 64, 64);
 }
 
 

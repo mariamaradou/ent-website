@@ -1,6 +1,6 @@
 <template  >
 <div id="medicalCenter">
-  <div id="equipment">
+  <div id="equipment" class="section-container">
     <h3>Το Ιατρείο</h3>
     <p> Ο χώρος του ιατρείου είναι σχεδιασμένος ώστε να εκπέμπει ηρεμία και οικειότητα στον επισκέπτη.
       Είναι εξοπλισμένος με τα κατάλληλα εργαλεία για τον σωστή εξέταση του ασθενούς. 
@@ -14,8 +14,8 @@
       
     </ul>
   </div>
-<hr>
- <div id="imagesofMedicalCenter" class="d-flex justify-content-center"  >
+<!-- <hr> -->
+ <div id="imagesofMedicalCenter" class="d-flex justify-content-space-between section-container"  >
  <img id="0" v-bind:src="require('../../public/images/six.jpg')" role="button" @click="openModal"/>
  <img id="1" v-bind:src="require('../../public/images/two.jpg')" role="button" @click="openModal" />
  <img id="2" v-bind:src="require('../../public/images/three.jpg')" role="button" @click="openModal"/>
@@ -128,16 +128,19 @@ export default {
 #imagesofMedicalCenter{
   flex-wrap: wrap;
  padding:10px;
+ /* background-color: rgb(248, 249, 250); */
+ background-color:rgba(187, 232, 232, 0.2);
   
   
 }
 
 #imagesofMedicalCenter > img{
-  width:350px;
-  height:300px;
+  width:200px;
+  height:200px;
   margin: 10px;
   
-  border-radius: 10px;
+  border-radius: 3px;
+  box-shadow: 5px 5px 5px lightgray;
   
 
   
@@ -160,6 +163,9 @@ backdrop-filter: blur(5px);
 
      display: flex;
     justify-content: center;
+    background-repeat: no-repeat;
+   background-size: cover;
+   /* opacity: 0.2; */
    
     
 }
@@ -229,7 +235,7 @@ width:100vw;
 
 .closeButton{
   width: 30px; 
-  right:5vw;
+  right:6vw;
   
   top:4px;
   position: absolute;
@@ -243,9 +249,7 @@ width:100vw;
 }
 
 
-#equipment{
-  padding:10px;
-}
+
 ul{
   list-style-type:none;
   margin:10px;
@@ -263,6 +267,10 @@ p{padding-left:10px;}
 
 hr{
   margin:0;
+}
+
+#imagesofMedicalCenter{
+  justify-content: center;
 }
 
 </style>
