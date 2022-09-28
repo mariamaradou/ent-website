@@ -28,13 +28,16 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 0.9rem;
+  font-size: 1rem;
   outline: none;
   
   /* color: darkcyan; */
 
 }
 
+p{
+  font-size: 15px;
+}
 .section-container{
    padding: 30px 10% 30px 10%;
 }
@@ -59,12 +62,26 @@ export default {
 
 
 h3{
-    padding: 10px;
+  padding: 10px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #728686;
     width: 100%;
-    text-align: center;
-    font-weight:600;
+    text-align: left;
     color: rgb(65, 64, 64);
 }
 
+.highlighted{
+  color:red;
+  animation-name: mymove;
+  animation-duration: 2s;
+animation-iteration-count: 1;
+}
+
+@keyframes mymove {
+  
+  50% {
+    text-shadow: 0px 1px 1rem #f30000;
+  }
+}
 
 </style>

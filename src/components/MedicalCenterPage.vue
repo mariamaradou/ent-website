@@ -2,8 +2,8 @@
 <div id="medicalCenter">
   <div id="equipment" class="section-container">
     <h3>Το Ιατρείο</h3>
-    <p> Ο χώρος του ιατρείου είναι σχεδιασμένος ώστε να εκπέμπει ηρεμία και οικειότητα στον επισκέπτη.
-      Είναι εξοπλισμένος με τα κατάλληλα εργαλεία για τον σωστή εξέταση του ασθενούς. 
+    <p>To ιατρείο βρίσκεται στην Αναξαγόρα 5, κάτω από την Λεωφόρο Ελευθερίου Βενιζέλου. Βρίσκεται στον 2ο όροφο του κτιρίου, το οποίο διαθέτει ασανσέρ.</p>
+    <p> Ο χώρος του ιατρείου είναι εξοπλισμένος με τα κατάλληλα εργαλεία για τον σωστή εξέταση του ασθενούς. 
     Με τον ΩΡΛ εξοπλισμό πραγματοποιούνται οι ακόλουθες εξετάσεις:
     </p>
     <ul >
@@ -15,7 +15,7 @@
     </ul>
   </div>
 <!-- <hr> -->
- <div id="imagesofMedicalCenter" class="d-flex justify-content-space-between section-container"  >
+ <div id="imagesofMedicalCenter" class="imagesofMedicalCenter d-flex justify-content-space-between section-container"  >
  <img id="0" v-bind:src="require('../../public/images/six.jpg')" role="button" @click="openModal"/>
  <img id="1" v-bind:src="require('../../public/images/two.jpg')" role="button" @click="openModal" />
  <img id="2" v-bind:src="require('../../public/images/three.jpg')" role="button" @click="openModal"/>
@@ -50,7 +50,7 @@
     </div>
     <div class="carousel-item" id="carousel3">
       <button class="closeButton btn-close"  @click="closeModal">
-    <!-- <img  src="../../public/images/closeButton.png"> -->
+  
      </button>
      
       <img v-bind:src="require('../../public/images/three.jpg')" >
@@ -165,23 +165,43 @@ backdrop-filter: blur(5px);
     justify-content: center;
     background-repeat: no-repeat;
    background-size: cover;
+   
    /* opacity: 0.2; */
    
     
 }
 
-#carousel1{
+.carousel-item::before{
+  content: "";
+    
+      background-size: cover;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+     
+}
+
+.carousel-item img{
+  position:relative;
+}
+
+#carousel1::before{
+   
+ 
   background-image:url('../../public/images/six - blurred.jpg');
+  
   
 
 }
-#carousel2{
+#carousel2::before{
   background-image:url('../../public/images/two - blurred.jpg')
 }
-#carousel3{
+#carousel3::before{
   background-image:url('../../public/images/three - blurred.jpg')
 }
-#carousel4{
+#carousel4::before{
   background-image:url('../../public/images/four - blurred.jpg');
 }
 
@@ -195,7 +215,7 @@ backdrop-filter: blur(5px);
 
 
 .carousel-item > img {
-width:60vw;
+width:fit-content;
  height:42vw;
  border:solid rgba(65, 64, 64, 0.123) 1px;
  border-radius: 15px;
@@ -236,8 +256,9 @@ width:100vw;
 .closeButton{
   width: 30px; 
   right:6vw;
-  
+  margin-top:10px;
   top:4px;
+  z-index: 1;
   position: absolute;
   background: url("../../public/images/closeButton.png");
     
@@ -245,22 +266,28 @@ width:100vw;
 
 .btn-close{
   height:1.8em;
+ 
   
 }
 
 
 
 ul{
-  list-style-type:none;
+
   margin:10px;
   padding-left: 0px;
+  margin-left: 25px;
 }
 li{
-  background-image: url('../../public/images/check_big.png');
   
+
   background-repeat: no-repeat;
-   padding-left: 40px;
+    font-size: 15px;
    padding-bottom: 10px;
+}
+
+li::marker{
+  color: darkcyan;
 }
 
 p{padding-left:10px;}

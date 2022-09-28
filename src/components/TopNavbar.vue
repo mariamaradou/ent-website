@@ -18,27 +18,38 @@
         <li class="nav-item">
           <router-link  to="/medicalcenter">Το Ιατρείο</router-link>
         </li>
-        <li class="nav-item dropdown">
+        <!-- <li class="nav-item dropdown">
           <a class="dropdown-toggle"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Παθήσεις
+            Χειρουργικές Επεμβάσεις
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">παθηση</a></li>
-            <li><a class="dropdown-item" href="#">αλλη παθηση</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="#">Χειρουργική στοματικής κοιλότητας, φάρρυγος και λάρυγγος</a></li>
+            <li><a class="dropdown-item" href="#">Ενδοσκοπική χειρουργική</a></li>
+            <li><a class="dropdown-item" href="#">Ωτοχειρουργική</a></li>
+            <li><a class="dropdown-item" href="#">Χειρουργική τραχήλου</a></li>
           </ul>
+        </li> -->
+         <li class="nav-item">
+          
+        <router-link to="/surgeries"  >Χειρουργικές Επεμβάσεις</router-link>
         </li>
-        <li class="nav-item dropdown">
+        <!-- <li class="nav-item dropdown">
           <a class="dropdown-toggle"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Υπηρεσίες
+            Υπηρεσίες Ιατρείου
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Ωτολογία</a></li>
-            <li><a class="dropdown-item" href="#">Ρινολογία</a></li>
+            <li><a class="dropdown-item" href="#">Διαγνωστικός Λαρυγγολογικός Έλεγχος</a></li>
+            <li><a class="dropdown-item" href="#">Ακοομετρικός Έλεγχος</a></li>
+            <li><a class="dropdown-item" href="#">Ενδοσκοπικός Έλεχγος</a></li>
+            <li><a class="dropdown-item" href="#">Παιδολαρυγγολογία</a></li>
+            
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Χειρουργική</a></li>
+            <li><a class="dropdown-item" href="#">Επισκέψεις κατ' οίκον</a></li>
           </ul>
+        </li> -->
+         <li class="nav-item">
+          
+        <router-link to="/services"  >Υπηρεσίες Ιατρείου</router-link>
         </li>
       <li class="nav-item">
           
@@ -72,6 +83,13 @@ name: 'TopNavbar',
 
 .dropdown-item:focus{
   background-color:darkcyan;
+}
+
+.dropdown-item{
+
+  word-wrap: break-word;
+  white-space:normal;
+  min-width:250px;
 }
 
 
@@ -108,6 +126,7 @@ a{color:rgba(0, 0, 0, 0.55);
 
 #logo_image{
   width: 200px;
+  border-radius: 30px;
 }
 
 .navbar{

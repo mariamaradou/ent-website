@@ -2,7 +2,8 @@ import { createRouter, createWebHistory } from "vue-router";
 import MedicalCenterPage from "../components/MedicalCenterPage"
 import HomePage from "../components/HomePage"
 import BioPage from "../components/BioPage"
-
+import SurgeriesPage from "../components/SurgeriesPage"
+import ServicesPage from "../components/ServicesPage"
 const routes = [
     {
     path: "/medicalcenter",
@@ -21,7 +22,18 @@ const routes = [
     name:"BioPage",
     component: BioPage
 
+    },
+    {
+        path:"/surgeries",
+        name:"Surgeries",
+        component:SurgeriesPage
+    },
+    {
+        path:"/services",
+        name:"Services",
+        component:ServicesPage
     }
+
 
 
 ]
