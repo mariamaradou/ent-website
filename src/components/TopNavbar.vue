@@ -132,7 +132,18 @@ a{color:rgba(0, 0, 0, 0.55);
 .navbar{
   flex-direction: column;
   padding-right: 10%;
-  padding-left: 10%;
+
+ 
+    
+    
+
+}
+
+@media (min-width: 767px) {
+
+  .navbar{
+    padding-left: 10%;
+  }
 }
 
 .navbar > *:first-child{

@@ -172,6 +172,12 @@ h4 {
   cursor: pointer;
 }
 
+a, a:hover{
+  color: #048b80;
+}
+
+
+
 @media only screen and (max-width: 767px) {
   .mainPage {
     flex-direction: column;

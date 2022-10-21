@@ -71,7 +71,7 @@ h3{
 }
 
 .highlighted{
-  color:red;
+  color:#048b80;
   animation-name: mymove;
   animation-duration: 2s;
 animation-iteration-count: 1;
@@ -80,7 +80,7 @@ animation-iteration-count: 1;
 @keyframes mymove {
   
   50% {
-    text-shadow: 0px 1px 1rem #f30000;
+    text-shadow: 0px 1px 1rem #569792;
   }
 }
 

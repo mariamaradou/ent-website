@@ -21,7 +21,7 @@
             <p id="center-phone">Σταθερό: 210 6252299</p>
             <p id="cellphone">Κινητό: +306973398691</p>
             <a href="mailto:marantosgiannis@gmail.com">
-              <p id="btnOutlook">Email: marantosgiannis@gmail.com</p>
+              <p id="btnOutlook">Email: <span>marantosgiannis@gmail.com</span></p>
             </a>
           </div>
           <!-- Grid column -->
@@ -81,6 +81,11 @@ a {
   text-decoration: none;
 }
 
+a:hover{
+  color: #6c757d;
+
+}
+
 h6 {
   letter-spacing: 1px;
 }
@@ -100,12 +105,20 @@ h6 {
   letter-spacing: 1px;
 }
 
+@media (min-width: 767px) {
 footer {
+  
+  
   padding-left: 10%;
   padding-right: 10%;
+  }
 }
 
 footer section {
   padding-top: 1px;
+}
+
+#btnOutlook span{
+  text-decoration: underline;
 }
 </style>
