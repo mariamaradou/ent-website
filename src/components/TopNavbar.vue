@@ -1,6 +1,6 @@
 <template>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
- <div class="contact-info" >Επικοινωνία: +306973398691 / marantosgiannis@gmail.com</div>
+ <div class="contact-info" >Επικοινωνία: +306973398691 / <span><a id="mail" href="mailto:marantosgiannis@gmail.com">marantosgiannis@gmail.com</a></span></div>
  <hr class="header-split">
   <div class="container-fluid">
     
@@ -81,6 +81,9 @@ name: 'TopNavbar',
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
+a#mail{
+  color:inherit;
+}
 .dropdown-item:focus{
   background-color:darkcyan;
 }
@@ -98,12 +101,12 @@ name: 'TopNavbar',
  
 }
 
-.router-link-exact-active{
+.nav-item .router-link-exact-active{
   font-weight: bold;
   color:darkcyan;
 }
 
-a{color:rgba(0, 0, 0, 0.55);
+.nav-item a{color:rgba(0, 0, 0, 0.55);
     display: block;
     padding: 0.5rem 1rem;
     text-decoration: none;
